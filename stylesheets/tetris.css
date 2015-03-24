@@ -1,0 +1,145 @@
+h3 {
+  text-align: center;
+}
+
+.content {
+  margin: auto;
+  margin-top: 50px;
+  height: 600px;
+  width: 615px;
+  position: relative;
+}
+
+.left-side, .screen {
+  height: 100%;
+  width: 300px;
+  margin-bottom: 20px;
+  margin-right: 14px;
+  position: absolute;
+}
+
+.screen {
+  z-index: 10;
+  background-color: black;
+  opacity: .65;
+  margin: 0 auto;
+}
+
+button {
+  text-align: center;
+  top: 271px;
+  left: 34px;
+  font-size: 2.5em;
+  border-radius: 15px;
+  position: absolute;
+}
+
+.right-side {
+  height: 100%;
+  width: 300px;
+  left: 300px;
+  margin-bottom: 10px;
+  position: absolute;
+}
+
+.top {
+  margin-bottom: 20px;
+}
+
+.directions {
+  min-width: 200px;
+  text-align: center;
+  left: 350px;
+  top: 490px;
+  position: absolute;
+}
+
+.dir {
+  padding: 2px;
+  margin: 2px auto;
+}
+
+.score-holder {
+  min-height: 50px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.score {
+  text-align: center;
+  padding: 5px;
+  font-size: 4em;
+}
+
+.up-next {
+  min-width: 150px;
+  min-height: 100px;
+}
+
+.up-next-row {
+  margin: 0 auto;
+  width: 120px;
+  min-height: 20px;
+  clear: both;
+}
+
+.up-next-cell {
+  width: 20px;
+  height: 20px;
+  outline-style: solid;
+  outline-width: 1px;
+  outline-color: darkgray;
+  background-color: lightgray;
+  float: left;
+}
+
+.tetris-row {
+  width: 50%;
+  min-width: 300px;
+
+  margin: 0 auto;
+  min-height: 10px;
+  clear: both;
+}
+
+.tetris-cell {
+  min-width: 30px;
+  min-height: 30px;
+  outline-style: solid;
+  outline-width: 1px;
+  outline-color: darkgray;
+  background-color: lightgray;
+  float: left;
+}
+
+.l {
+  background-color: magenta;
+}
+
+.s {
+  background-color: yellow;
+}
+
+.i {
+  background-color: cyan;
+}
+
+.j {
+  background-color: purple;
+}
+
+.t {
+  background-color: limegreen;
+}
+
+.z {
+  background-color: orange;
+}
+
+.o {
+  background-color: navy;
+}
+
+.white {
+  background-color: white;
+}

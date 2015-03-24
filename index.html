@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tetris!</title>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/tetris.css">
+    <script type="text/javascript" src="javascripts/queue.js"></script>
+    <script type="text/javascript" src="javascripts/tetromino.js"></script>
+    <script type="text/javascript" src="javascripts/board.js"></script>
+    <script type="text/javascript" src="javascripts/view.js"></script>
+    <script type="text/javascript" src="javascripts/game.js"></script>
+  </head>
+  <body>
+    <div class="content">
+      <div class="top">
+        <div class="left-side">
+          <div class="board">
+          </div>
+        </div>
+        <div class="screen">
+          <button>Press Enter</button>
+        </div>
+        <div class="right-side">
+          <div class="score-holder">
+            Your score is:
+            <div class="score">0</div>
+          </div>
+          <h3>Up Next</h3>
+          <div class="up-next"></div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="directions">
+          <p class="dir">&uarr; Rotate</p>
+          <p class="dir">&larr; Move Left</p>
+          <p class="dir">&rarr; Move Right</p>
+          <p class="dir">&darr; Descend</p>
+          <p class="dir">SPACE Drop!</p>
+        </div>
+
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var tetris = new Tetris.Game();
+      var gameSetup = function() {
+        var board = tetris.board;
+        $( document ).bind( "keydown", function(e) {
+          if (e.keyCode == 39) {
+            e.preventDefault();
+            board.toRight();
+          } else if (e.keyCode == 37) {
+            e.preventDefault();
+            board.toLeft();
+          } else if (e.keyCode == 38) {
+            e.preventDefault();
+            board.rotate();
+          } else if (e.keyCode == 40) {
+            e.preventDefault();
+            board.descend();
+          } else if (e.keyCode == 32) {
+            e.preventDefault();
+            board.superDescend(false);
+          } else if (e.keyCode == 68) {
+            debugger
+          } else if (tetris.board.isEnded && e.keyCode == 13 ) {
+            $('.board').empty();
+            $('.up-next').empty();
+            tetris = new Tetris.Game();
+            $('.screen').hide();
+            gameSetup();
+            tetris.play();
+          }
+        });
+        tetris.newGame();
+      };
+      $( document ).ready(gameSetup());
+    </script>
+  </body>
+</html>
